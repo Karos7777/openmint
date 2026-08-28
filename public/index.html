@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEAFIRE · Robinhood</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="scan"></div>
+  <header class="top">
+    <div class="brand">
+      <span class="mark">SF</span>
+      <div>
+        <div class="callsign">SEAFIRE</div>
+        <div class="sub">OPENSEA · ROBINHOOD MAINNET · QTY 1</div>
+      </div>
+    </div>
+    <div class="top-meta">
+      <div class="chip" id="link-chip">RPC —</div>
+      <div class="chip" id="block-chip">BLK —</div>
+      <div class="chip live" id="clock-chip">00:00:00</div>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="radar-col">
+      <div class="reticle" id="reticle">
+        <div class="rings"></div>
+        <div class="sweep"></div>
+        <div class="cross"></div>
+        <div class="phase-read">
+          <div class="phase-label" id="phase-label">STANDBY</div>
+          <div class="timer" id="timer">--:--:--</div>
+          <div class="timer-sub" id="timer-sub">ожидание окна дропа</div>
+        </div>
+      </div>
+      <div class="target-card">
+        <div class="thumb" id="thumb"></div>
+        <div class="target-copy">
+          <div class="kicker">ЦЕЛЬ / COLLECTION</div>
+          <h1 id="col-name">загрузка…</h1>
+          <a id="col-link" href="https://opensea.io/collection/0xc21159f412c294ca2c38f2a9ecaaccf9d93ec929/overview" target="_blank" rel="noreferrer">opensea.io/collection/0xc211…c929</a>
+          <div class="addr" id="col-addr">0xc21159f412c294ca2c38f2a9ecaaccf9d93ec929</div>
+          <div class="lock" id="lock-line">ЗАМОК · проверка цели</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intel">
+      <div class="stat-grid">
+        <article>
+          <span>ЦЕНА</span>
+          <strong id="stat-price">—</strong>
+        </article>
+        <article>
+          <span>САППЛАЙ</span>
+          <strong id="stat-supply">—</strong>
+        </article>
+        <article>
+          <span>ЛИМИТ / КОШЕЛЁК</span>
+          <strong id="stat-cap">1</strong>
+        </article>
+        <article>
+          <span>СЕТЬ</span>
+          <strong id="stat-chain">ROBINHOOD</strong>
+        </article>
+      </div>
+
+      <div class="wallet-row">
+        <div>
+          <div class="kicker">МИНТЕР</div>
+          <div class="addr" id="wallet-addr">кошелёк не подключён</div>
+          <div class="hint" id="signer-hint">сервер без ключа — подпись через MetaMask</div>
+        </div>
+        <button type="button" class="ghost" id="connect-btn">ПОДКЛЮЧИТЬ</button>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="arm" id="arm-btn">ВООРУЖИТЬ</button>
+        <button type="button" class="ghost" id="fire-btn">ВЫСТРЕЛ ×1</button>
+      </div>
+      <p class="doctrine">1 NFT за заход. При ошибке, раннем старте или sold out — мгновенный ретрай. Стоп только на успехе или конце дропа.</p>
+    </section>
+
+    <section class="log-col">
+      <div class="log-head">
+        <span>ЖУРНАЛ ПОПЫТОК</span>
+        <span id="log-count">0</span>
+      </div>
+      <ol class="log" id="log"></ol>
+    </section>
+  </main>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
