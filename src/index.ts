@@ -683,3 +683,11 @@ async function safeJson(request: Request): Promise<Record<string, string>> {
     return {};
   }
 }
+
+export default {
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    const id = ctx.durableObjects.get("App").idFromName("mint");
+    const stub = ctx.durableObjects.get(id);
+    return stub.fetch(request);
+  }
+};
